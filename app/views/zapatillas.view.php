@@ -20,4 +20,20 @@ class ZapatillasView {
             $this->smarty->assign('zapatillas', $allZapatillas);
             $this->smarty->display('templates/galeria.tpl');
         }
+        
+        public function aboutUs() {
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/sobreNosotros.tpl');
+            $this->smarty->display('templates/footer.tpl');
+        }
+
+        public function login() {
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/login.tpl');
+        }
+
+        public function register() {
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/register.tpl');
+        }
 }

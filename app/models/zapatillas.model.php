@@ -17,4 +17,9 @@
                 return $allZapatillas;
             }
 
+            public function registrarUser() {
+                
+            }
+
+
     }

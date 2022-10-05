@@ -20,12 +20,19 @@ switch ($params[0]) {
     case 'zapatillas' :   
         $zapatillasController->showZapatillas();
         break;
-    case 'como_comprar' :
-        $zapatillasController->comoComprar();
+    case 'aboutUs' :
+        $zapatillasController->aboutUs();
+        break;
     case 'contactanos' :
         $zapatillasController->contactanos();
+        break;
+    case 'login' :
+        $zapatillasController->login();
+        break;
+    case 'register' :
+        $zapatillasController->register();
+        break;
     default:
         echo('404 Page not found');
         break;
-
 }

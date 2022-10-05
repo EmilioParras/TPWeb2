@@ -20,5 +20,20 @@ require_once './app/views/zapatillas.view.php';
                 $todasZapatillas = $this->model->getAllZapatillas();
                 $this->view->showZapatillas($todasZapatillas);
             }
+
+            public function aboutUs() {
+                $this->view->aboutUs();
+            }
+
+            public function  login()  {
+                // $this->model->registrarUser();
+                $this->view->login();
+            }
+
+            public function  register()  {
+                // $this->model->registrarUser();
+                $this->view->register();
+            }
+
            
 }
