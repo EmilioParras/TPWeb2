@@ -9,7 +9,7 @@
             }
         
             public function getAllZapatillas() {
-                $query = $this->db->prepare("SELECT * FROM zapatillas");
+                $query = $this->db->prepare("SELECT * FROM zapatillas as z");
                 $query->execute();
             
                 $allZapatillas = $query->fetchAll(PDO::FETCH_OBJ);
@@ -21,5 +21,22 @@
                 
             }
 
+            public function showDeportivesShoes() {
+                $query = $thid->db->prepare("SELECT * FROM zapatillas WHERE z.id_categoria_fk = 2");
+                $query->execute();
+
+                $deportiveShoes = $query->fetchAll(PDO::FETCH_OBJ);
+
+                return $deportiveShoes;
+            }
+
+            public function showUrbanShoes() {
+                $query = $thid->db->prepare("SELECT * FROM zapatillas WHERE z.id_categoria_fk = 1");
+                $query->execute();
+
+                $urbanShoes = $query->fetchAll(PDO::FETCH_OBJ);
+
+                return $urbanShoes;
+            }
 
     }

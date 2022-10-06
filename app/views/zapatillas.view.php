@@ -18,8 +18,28 @@ class ZapatillasView {
 
         public function showZapatillas($allZapatillas) {
             $this->smarty->assign('zapatillas', $allZapatillas);
+            $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/galeria.tpl');
+            $this->smarty->display('templates/footer.tpl');
+
         }
+
+        public function showDeportiveShoes($deportiveShoes) {
+            $this->smarty->assign('zapatillasDeportivas', $deportiveShoes);
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/galeria.tpl');
+            $this->smarty->display('templates/footer.tpl');
+
+        }
+
+        public function showUrbanShoes($urbanShoes) {
+            $this->smarty->assign('zapatillasUrbanas', $urbanShoes);
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/galeria.tpl');
+            $this->smarty->display('templates/footer.tpl');
+
+        }
+
         
         public function aboutUs() {
             $this->smarty->display('templates/header.tpl');
