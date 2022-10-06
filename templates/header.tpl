@@ -35,7 +35,7 @@
           </li>
           <li class="nav-item">
           <div class="dropdown">
-            <a class="btn dropdown-toggle" href="zapatillas" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="btn dropdown-toggle" href="inicio" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               Zapatillas
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -47,7 +47,12 @@
           <li class="nav-item">
             <a class="nav-link text-black" href="acerca-de">Sobre Nosotros</a>
           </li>
-        </ul>
+          <li class="nav-item">
+            <a class="nav-link text-black" href="admin-table">Tabla de administrador</a>
+          </li>
+          </ul>
+          <img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/icon.png" alt="icono">
+          <img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/carro-de-la-compra.png" alt="icono">
       </div>
     </div>
   </nav>

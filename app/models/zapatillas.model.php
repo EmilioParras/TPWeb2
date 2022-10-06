@@ -17,10 +17,6 @@
                 return $allZapatillas;
             }
 
-            public function registrarUser() {
-                
-            }
-
             public function getDeportiveShoes() {
                 $query = $this->db->prepare("SELECT * FROM zapatillas WHERE id_categoria_fk = 2");
                 $query->execute();

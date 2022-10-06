@@ -12,17 +12,19 @@
             <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
             <p class="text-white-50 mb-5">Por favor ingresa tu email y contraseña</p>
 
-            <div class="form-outline form-white mb-4">
-              <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-              <label class="form-label" for="typeEmailX">Email</label>
-            </div>
+            <form action="" method="post">
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX">Email</label>
+              </div>
 
-            <div class="form-outline form-white mb-4">
-              <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-              <label class="form-label" for="typePasswordX">Contraseña</label>
-            </div>
+              <div class="form-outline form-white mb-4">
+                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                <label class="form-label" for="typePasswordX">Contraseña</label>
+              </div>
+            </form>
 
-            {* <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvidate tu contraseña?</a></p> *}
+            <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvidaste tu contraseña?</a></p> 
 
             <button class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesion</button>
 

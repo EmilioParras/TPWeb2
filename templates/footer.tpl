@@ -19,7 +19,7 @@
         <!-- Grid column -->
         <div class="col-md-2">
           <h6 class="text-uppercase font-weight-bold">
-            <a href="zapatillas" class="text-white">Zapatillas</a>
+            <a href="inicio" class="text-white">Zapatillas</a>
           </h6>
         </div>
         <!-- Grid column -->

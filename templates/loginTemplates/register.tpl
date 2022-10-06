@@ -9,7 +9,7 @@
 
             <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
             <p class="text-white-50 mb-5">Por favor ingresa tu email y contraseña</p>
-
+            <form action="" method="post">
             <div class="form-outline form-white mb-4">
               <input type="text" id="typeNameX" class="form-control form-control-lg" />
               <label class="form-label" for="typeNameX">Nombre</label>
@@ -34,8 +34,8 @@
               <input type="password" id="typePasswordX" class="form-control form-control-lg" />
               <label class="form-label" for="typePasswordX">Contraseña</label>
             </div>
-
-            {* <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvidate tu contraseña?</a></p> *}
+          </form>  
+             <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvidaste tu contraseña?</a></p> 
 
             <button class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesion</button>
 
