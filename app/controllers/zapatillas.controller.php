@@ -12,17 +12,23 @@ require_once './app/views/zapatillas.view.php';
                 $this->view = new ZapatillasView();
             }
 
-            public function showHome() {
-                $this->view->showHome();
-            }
-
             public function showZapatillas() {
                 $todasZapatillas = $this->model->getAllZapatillas();
                 $this->view->showZapatillas($todasZapatillas);
             }
 
-            public function aboutUs() {
-                $this->view->aboutUs();
+            public function showUrbanShoes() {
+                $urbanShoes = $this->model->getUrbanShoes();
+                $this->view->showUrbanShoes($urbanShoes);
+            }
+
+            public function showDeportiveShoes() {
+                $deportiveShoes = $this->model->getDeportiveShoes();
+                $this->view->showDeportiveShoes($deportiveShoes);
+            }
+
+            public function acercaDe() {
+                $this->view->acercaDe();
             }
 
             public function  login()  {
@@ -33,6 +39,10 @@ require_once './app/views/zapatillas.view.php';
             public function  register()  {
                 // $this->model->registrarUser();
                 $this->view->register();
+            }
+
+            public function contactUs() {
+
             }
 
            

@@ -35,7 +35,7 @@
           </div>
 
           <div>
-            <p class="mb-0">No tienes una cuenta? <a href="register" class="text-white-50 fw-bold">Registrate ahora!</a>
+            <p class="mb-0">No tienes una cuenta? <a href="registrarse" class="text-white-50 fw-bold">Registrate ahora!</a>
             </p>
           </div>
 

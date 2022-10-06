@@ -28,16 +28,24 @@
       <div class="collapse navbar-collapse" id="navbarExample01">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="home">Inicio</a>
+            <a class="nav-link text-black" aria-current="page" href="inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login">Logearse</a>
+            <a class="nav-link text-black" href="iniciar-sesion">Logearse</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="zapatillas">Zapatillas</a>
+          <div class="dropdown">
+            <a class="btn dropdown-toggle" href="zapatillas" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              Zapatillas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="urban-shoes">Zapatillas Urbanas</a></li>
+              <li><a class="dropdown-item" href="deportive-shoes">Zapatillas Deportivas</a></li>
+            </ul>
+        </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutUs">Sobre Nosotros</a>
+            <a class="nav-link text-black" href="acerca-de">Sobre Nosotros</a>
           </li>
         </ul>
       </div>

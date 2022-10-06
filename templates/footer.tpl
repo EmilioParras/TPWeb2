@@ -11,7 +11,7 @@
         <!-- Grid column -->
         <div class="col-md-2">
           <h6 class="text-uppercase font-weight-bold">
-            <a href="aboutUs" class="text-white">Sobre Nosotros</a>
+            <a href="acerca-de" class="text-white">Sobre Nosotros</a>
           </h6>
         </div>
         <!-- Grid column -->

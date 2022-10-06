@@ -14,22 +14,28 @@ $zapatillasController = new ZapatillasController();
 
 
 switch ($params[0]) {
-    case 'home' : 
-        $zapatillasController->showHome();
-        break;
-    case 'zapatillas' :   
+    case 'inicio' : 
         $zapatillasController->showZapatillas();
         break;
-    case 'aboutUs' :
+    case 'zapatillas' :
+        $zapatillasController->showZapatillas();
+        break;
+    case 'urban-shoes' :
+        $zapatillasController->showUrbanShoes();
+        break;
+    case 'deportive-shoes' :
+        $zapatillasController->showDeportiveShoes();
+        break;     
+    case 'acerca-de' :
         $zapatillasController->aboutUs();
         break;
     case 'contactanos' :
-        $zapatillasController->contactanos();
+        $zapatillasController->contactUs();
         break;
-    case 'login' :
+    case 'iniciar-sesion' :
         $zapatillasController->login();
         break;
-    case 'register' :
+    case 'registrarse' :
         $zapatillasController->register();
         break;
     default:
