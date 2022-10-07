@@ -9,7 +9,7 @@
             }
         
             public function getAllZapatillas() {
-                $query = $this->db->prepare("SELECT * FROM zapatillas as z");
+                $query = $this->db->prepare("SELECT * FROM zapatillas");
                 $query->execute();
             
                 $allZapatillas = $query->fetchAll(PDO::FETCH_OBJ);
@@ -34,5 +34,27 @@
 
                 return $urbanShoes;
             }
+
+            public function getAllTableInfo() {
+                $query = $this->db->prepare("SELECT * FROM zapatillas");
+                $query->execute();
+
+                $allTableInfo = $query->fetchAll(PDO::FETCH_OBJ);
+
+                return $allTableInfo;
+            }
+
+            public function addShoe($nombre, $marca, $precio, $talles, $imagen, $categoria) {
+                $query = $this->db->prepare("INSERT INTO zapatillas(nombre, marca, precio, talle, imagen, id_categoria_fk) VALUES (?, ?, ?, ?, ?, ?)");
+                $query->execute([$nombre, $marca, $precio, $talles, $imagen, $categoria]);
+
+                return $this->db->lastInsertId();
+            }
+
+            function deleteShoe($id) {
+                $query = $this->db->prepare("DELETE FROM zapatillas WHERE id = ?");
+                $query->execute([$id]);
+            }
+        
 
     }

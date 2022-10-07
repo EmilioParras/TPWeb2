@@ -39,8 +39,8 @@
               Zapatillas
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="urban-shoes">Zapatillas Urbanas</a></li>
-              <li><a class="dropdown-item" href="deportive-shoes">Zapatillas Deportivas</a></li>
+              <li><a class="dropdown-item" href="zapatillas-urbanas">Zapatillas Urbanas</a></li>
+              <li><a class="dropdown-item" href="zapatillas-deportivas">Zapatillas Deportivas</a></li>
             </ul>
         </div>
           </li>
@@ -48,7 +48,7 @@
             <a class="nav-link text-black" href="acerca-de">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black" href="admin-table">Tabla de administrador</a>
+            <a class="nav-link text-black" href="tabla-administrador">Tabla de administrador</a>
           </li>
           </ul>
           <img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/icon.png" alt="icono">

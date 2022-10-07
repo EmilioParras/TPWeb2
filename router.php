@@ -19,10 +19,10 @@ switch ($params[0]) {
     case 'inicio' : 
         $zapatillasController->showZapatillas();
         break;
-    case 'urban-shoes' :
+    case 'zapatillas-urbanas' :
         $zapatillasController->showUrbanShoes();
         break;
-    case 'deportive-shoes' :
+    case 'zapatillas-deportivas' :
         $zapatillasController->showDeportiveShoes();
         break;     
     case 'acerca-de' :
@@ -37,6 +37,16 @@ switch ($params[0]) {
     case 'registrarse' :
         $functionalController->register();
         break;
+    case 'tabla-administrador' :
+        $zapatillasController->showAdminTable();
+        break;
+    case 'borrar':
+        $ZapatillasController = new ZapatillasController();
+        $id = $params[1];
+        $ZapatillasController->deleteShoe($id);
+        break;
+
+    case 'edit' :
     default:
         echo('404 Page not found');
         break;

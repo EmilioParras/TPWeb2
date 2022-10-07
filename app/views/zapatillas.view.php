@@ -33,4 +33,9 @@ class ZapatillasView {
 
         }
         
+        public function showAdminTable($allTableInfo) {
+            $this->smarty->assign('informacionTablaAdmin', $allTableInfo);
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/tablaAdmin.tpl');
+        }
 }

@@ -27,4 +27,28 @@ require_once './app/views/zapatillas.view.php';
                 $this->shoesview->showDeportiveShoes($deportiveShoes);
             }
 
+            public function showAdminTable() {
+                $allTableInfo = $this->model-> getAllTableInfo();
+                $this->shoesview->showAdminTable($allTableInfo);
+            }
+
+            public function addShoe() {
+
+                $nombre = $_POST['nombre']; 
+                $marca = $_POST['marca'];
+                $precio = $_POST['precio'];
+                $talles = $_POST['talles'];
+                $imagen = $_POST['imagen'];
+                $categoria = $_POST['categoria'];
+
+                $id = $this->model->insertShoe($nombre, $marca, $precio, $talles, $imagen, $categoria);
+
+                header("Location: " . BASE_URL); 
+            }
+
+            public function deleteShoe($id) {
+                $this->model->deleteShoe($id);
+                header("Location: " . BASE_URL);
+            }
+
 }
