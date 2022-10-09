@@ -12,21 +12,27 @@
             <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
             <p class="text-white-50 mb-5">Por favor ingresa tu email y contraseña</p>
 
-            <form action="" method="post">
+            <form method="POST" action="validate">
               <div class="form-outline form-white mb-4">
-                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                <label class="form-label" for="typeEmailX">Email</label>
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="email" required class="form-control form-control-lg" name="email" />
               </div>
 
               <div class="form-outline form-white mb-4">
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
                 <label class="form-label" for="typePasswordX">Contraseña</label>
+                <input type="password" required  id="password" class="form-control form-control-lg" name="password" />
               </div>
+              
+              <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="inicio">Olvidaste tu contraseña?</a></p> 
+              
+              {if $error} 
+                <div class="alert alert-danger mt-3">
+                    {$error}
+                </div>
+            {/if}
+    
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesion</button>
             </form>
-
-            <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvidaste tu contraseña?</a></p> 
-
-            <button class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesion</button>
 
             <div class="d-flex justify-content-center text-center mt-4 pt-1">
               <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>

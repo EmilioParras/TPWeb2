@@ -38,4 +38,10 @@ class ZapatillasView {
             $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/tablaAdmin.tpl');
         }
+
+        public function aboutUs() {
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/sobreNosotros.tpl');
+            $this->smarty->display('templates/footer.tpl');
+        }
 }

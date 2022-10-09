@@ -1,7 +1,7 @@
 <?php
 require_once './librerias/Smarty/libs/Smarty.class.php';
 
-class FunctionalnView {
+class AuthView {
     
     private $smarty;
 
@@ -9,7 +9,8 @@ class FunctionalnView {
             $this->smarty = new Smarty();
         }
 
-        public function login() {
+        public function showFormLogin($error = null) {
+            $this->smarty->assign("error", $error);
             $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/loginTemplates/login.tpl');
         }
@@ -19,10 +20,5 @@ class FunctionalnView {
             $this->smarty->display('templates/loginTemplates/register.tpl');
         }
 
-        public function aboutUs() {
-            $this->smarty->display('templates/header.tpl');
-            $this->smarty->display('templates/sobreNosotros.tpl');
-            $this->smarty->display('templates/footer.tpl');
-        }
 
     }
