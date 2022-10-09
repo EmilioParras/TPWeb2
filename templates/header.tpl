@@ -47,9 +47,15 @@
           <li class="nav-item">
             <a class="nav-link text-black" href="acerca-de">Sobre Nosotros</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" href="tabla-administrador">Tabla de administrador</a>
-          </li>
+          <div class="dropdown">
+            <a class="btn dropdown-toggle" href="inicio" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin site
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="tabla-administrador">Tabla de productos</a></li>
+              <li><a class="dropdown-item" href="agregar-producto">Agregar producto</a></li>
+            </ul>
+        </div>
           </ul>
           <img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/icon.png" alt="icono">
           <img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/carro-de-la-compra.png" alt="icono">

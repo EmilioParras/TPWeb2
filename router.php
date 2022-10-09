@@ -48,11 +48,15 @@ switch ($params[0]) {
         $zapatillasController = new ZapatillasController();
         $zapatillasController->showAdminTable();
         break;
+    case 'add' :
+        $zapatillasController = new ZapatillasController();
+        $zapatillasController->addProduct();
+        break;   
     case 'borrar':
-        $ZapatillasController = new ZapatillasController();
-        $id = $params[1];
-        $ZapatillasController->deleteShoe($id);
-        break;
+    $ZapatillasController = new ZapatillasController();
+    $id = $params[1];
+    $ZapatillasController->deleteShoe($id);
+    break;
     // case 'edit' : 
     //     $functionalController = new FunctionalController();
     //     $id = params

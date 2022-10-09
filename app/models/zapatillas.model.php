@@ -44,9 +44,9 @@
                 return $allTableInfo;
             }
 
-            public function addShoe($nombre, $marca, $precio, $talles, $imagen, $categoria) {
-                $query = $this->db->prepare("INSERT INTO zapatillas(nombre, marca, precio, talle, imagen, id_categoria_fk) VALUES (?, ?, ?, ?, ?, ?)");
-                $query->execute([$nombre, $marca, $precio, $talles, $imagen, $categoria]);
+            public function insertProduct($nombre, $marca, $price, $talles, $category) {
+                $query = $this->db->prepare("INSERT INTO zapatillas (nombre, marca, precio, talle, id_categoria_fk) VALUES (?, ?, ?, ?, ?)");
+                $query->execute([$nombre, $marca, $price, $talles, $category]);
 
                 return $this->db->lastInsertId();
             }

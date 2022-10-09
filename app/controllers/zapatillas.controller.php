@@ -32,16 +32,17 @@ require_once './app/views/zapatillas.view.php';
                 $this->shoesview->showAdminTable($allTableInfo);
             }
 
-            public function addShoe() {
+            public function addProduct() {
+                $this->shoesview->showAddTable();
 
                 $nombre = $_POST['nombre']; 
                 $marca = $_POST['marca'];
-                $precio = $_POST['precio'];
+                $price = $_POST['price'];
                 $talles = $_POST['talles'];
-                $imagen = $_POST['imagen'];
-                $categoria = $_POST['categoria'];
+                // $imagen = $_POST['imagen'];
+                $category = $_POST['category'];
 
-                $id = $this->model->insertShoe($nombre, $marca, $precio, $talles, $imagen, $categoria);
+                $id = $this->model->insertProduct($nombre, $marca, $price, $talles, $category);
 
                 header("Location: " . BASE_URL); 
             }
