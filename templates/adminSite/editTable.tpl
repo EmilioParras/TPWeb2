@@ -8,22 +8,29 @@
                                     <div class="card-header">   
                                         Ingresar nuevos datos:
                                     </div>
-                                    <form class="p-4" method="POST" action="edit">
+                                    <form class="p-4" method="POST" action="updated/{$editedShoe->id}">
                                         <div class="mb-3">
                                             <label class="form-label">Nombre:</label>
-                                            <input type="text" class="form-control" id="editNombre" name="editNombre" autofocus required >
+                                            <input type="text" class="form-control" id="editNombre" name="editNombre" placeholder="{$editedShoe->nombre}">
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-3">  
                                             <label class="form-label">Marca:</label>
-                                            <input type="text" class="form-control" id="editMarca" name="editMarca" autofocus required>
+                                            <select class="form-control" id="editMarca" name="editMarca">
+                                                <option>Nike</option>
+                                                <option>Adidas</option>
+                                                <option>Jhon Foos</option>
+                                                <option>Vans</option>
+                                                <option>Topper</option>
+                                                <option>Puma</option>
+                                            </select>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Precio:</label>
-                                            <input type="text" class="form-control" id="editPrecio" name="editPrecio" autofocus required>
+                                            <input type="float" class="form-control" id="editPrecio" name="editPrecio" placeholder="{$editedShoe->precio}$">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Talle:</label>
-                                            <input type="text" class="form-control" id="editTalle" name="editTalle" autofocus required>
+                                            <input type="text" class="form-control" id="editTalle" name="editTalle" placeholder="{$editedShoe->talle}">
                                         </div>
                                         <div class="mb-3">
                                         <label>Categoria</label>

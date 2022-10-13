@@ -30,28 +30,12 @@ class ZapatillasView {
             $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/shoesTemplates/urbanShoes.tpl');
             $this->smarty->display('templates/footer.tpl');
+        }
 
+        public function showOneShoe($oneshoe) {
+            $this->smarty->assign('oneShoeById', $oneshoe);
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/shoesTemplates/showOneShoe.tpl');
         }
         
-        public function showAdminTable($allTableInfo) {
-            $this->smarty->assign('informacionTablaAdmin', $allTableInfo);
-            $this->smarty->display('templates/header.tpl');
-            $this->smarty->display('templates/adminSite/tablaAdmin.tpl');
-        }
-
-        public function aboutUs() {
-            $this->smarty->display('templates/header.tpl');
-            $this->smarty->display('templates/sobreNosotros.tpl');
-            $this->smarty->display('templates/footer.tpl');
-        }
-
-        public function showAddTable() {
-            $this->smarty->display('templates/header.tpl');
-            $this->smarty->display('templates/adminSite/agregarProducto.tpl');
-        }
-
-        public function showEditTable() {
-            $this->smarty->display('templates/header.tpl');
-            $this->smarty->display('templates/adminSite/editTable.tpl');
-        }
 }

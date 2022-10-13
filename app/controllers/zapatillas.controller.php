@@ -30,4 +30,9 @@ require_once './app/helpers/auth.helper.php';
                 $this->shoesview->showDeportiveShoes($deportiveShoes);
             }
 
+            public function showShoe($id) {
+                $oneshoe = $this->model->getShoe($id);
+                $this->shoesview->showOneShoe($oneshoe);
+            }
+
 }

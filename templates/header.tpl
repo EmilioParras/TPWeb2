@@ -44,16 +44,15 @@
               </ul>
             </div>
           </li>
-          {* {if !isset($smarty.session.USER_ID)}
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="iniciar-sesion">Login</a>
-            </li>
-          {else} 
-            <li class="nav-item ml-auto">
-              <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
-            </li>
-          {/if} *}
-
+            {if !isset($smarty.session.USER_ID)}
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="iniciar-sesion">Login</a>
+              </li>
+            {else} 
+              <li class="nav-item ml-auto">
+                <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+              </li>
+            {/if} 
           <li class="nav-item">
             <div class="dropdown">
               <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">

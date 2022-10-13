@@ -32,7 +32,12 @@ switch ($params[0]) {
     case 'zapatillas-deportivas' :
         $zapatillasController = new ZapatillasController();
         $zapatillasController->showDeportiveShoes();
-        break;     
+        break;
+    case 'show' :
+        $zapatillasController = new ZapatillasController();
+        $id = $params[1];
+        $zapatillasController->showShoe($id);     
+        break;   
     case 'iniciar-sesion' :
         $authController = new AuthController();
         $authController->showFormLogin();
@@ -59,9 +64,14 @@ switch ($params[0]) {
         break;
     case 'edit' : 
         $adminTableController = new AdminController();
-        $id = $params[0];
+        $id = $params[1];
         $adminTableController->editShoe($id);
         break;
+    case 'updated' :
+        $adminTableController = new AdminController();
+        $id = $params[1];
+        $adminTableController->sendEditShoe($id);
+        break;    
     default:
         echo('no anda');
         break;

@@ -1,7 +1,7 @@
 <?php
 
 require_once './app/models/zapatillas.model.php';
-require_once './app/views/zapatillas.view.php';
+require_once './app/views/admintable.view.php';
 require_once './app/helpers/auth.helper.php';
 
     class AdminController {
@@ -11,14 +11,14 @@ require_once './app/helpers/auth.helper.php';
     
         public function __construct() {
             $this->model = new ZapatillasModel();
-            $this->shoesview = new ZapatillasView();     
+            $this->adminview = new AdminView();     
         }        
 
         public function showAdminTable() {
             // $this->authHelper->checkLogged();
 
             $allZapatillas = $this->model->getAllZapatillas();
-            $this->shoesview->showAdminTable($allZapatillas);
+            $this->adminview->showAdminTable($allZapatillas);
         }
 
         public function addProduct() {
@@ -46,16 +46,19 @@ require_once './app/helpers/auth.helper.php';
         }
 
         public function editShoe($id) {
-            // $this->authHelper->checkLogged();
-            $this->shoesview->showEditTable();
-            $this->model->editShoe($id);
+            $shoe = $this->model->editShoeById($id);
+            $this->adminview->showEditTable($shoe);
 
+        }
+
+        public function sendEditShoe($id) {
             $eNombre = $_POST['editNombre']; 
             $eMarca = $_POST['editMarca']; 
             $ePrecio = $_POST['editPrecio']; 
-            $eTalles = $_POST['editTalles']; 
+            $eTalles = $_POST['editTalle']; 
             $eCategory = $_POST['editCategory']; 
-
-            $shoeEdit = $this->model->editShoe($eNombre, $eMarca, $ePrecio, $eTalles, $eCategory);
+            
+            $this->model->updatedShoeById($id, $eNombre, $eMarca, $ePrecio, $eTalles, $eCategory);
+            header("Location: " . ADMINTABLE);
         }
 }

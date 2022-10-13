@@ -35,6 +35,12 @@
                 return $urbanShoes;
             }
 
+            public function getShoe($id) {
+                $query = $this->db->prepare("SELECT id, nombre, marca, precio, talle, imagen, id_categoria_fk FROM zapatillas WHERE id = ?");
+                $query->execute([$id]);
+                return $query->fetch(PDO::FETCH_OBJ);
+            }
+
             public function insertProduct($nombre, $marca, $precio, $talles, /*$imagen,*/ $category) {
                 $query = $this->db->prepare("INSERT INTO zapatillas (nombre, marca, precio, talle, /*imagen,*/ id_categoria_fk) VALUES (/*?,*/ ?, ?, ?, ?, ?)");
                 $query->execute([$nombre, $marca, $precio, $talles, /*$imagen,*/ $category]);
@@ -47,13 +53,18 @@
                 $query->execute([$id]);
             }
 
-            public function editShoe($eNombre, $eMarca, $ePrecio, $eTalles, $eCategory) {
-                $query = $this->db->prepare("UPDATE zapatillas SET nombre = ?, marca = ?, precio = ?, talle = ?, id_categoria_fk = ?;");
-                $query->execute([$eNombre, $eMarca, $ePrecio, $eTalles, $eCategory]);
+            public function editShoeById($id) {
+                $query = $this->db->prepare("SELECT id, nombre, marca, precio, talle, id_categoria_fk FROM zapatillas WHERE id = ?");
+                
+                $query->execute([$id]);
+                return $query->fetch(PDO::FETCH_OBJ);
+            }
 
-                return $this->db->lastInsertId();
+            public function updatedShoeById($id, $eNombre, $eMarca, $ePrecio, $eTalles, $eCategory) {
+                $query = $this->db->prepare("UPDATE zapatillas SET nombre = ?, marca = ?, precio = ?, talle = ?, id_categoria_fk = ? WHERE id= ? ");
+                $query->execute([$eNombre, $eMarca, $ePrecio, $eTalles, $eCategory, $id]);
 
+                header("Location: " . ADMINTABLE);
             }
         
-
     }

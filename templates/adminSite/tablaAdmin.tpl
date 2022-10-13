@@ -33,3 +33,4 @@
   </table>
 
   {include file="./agregarProducto.tpl"}
+  {include file="./editTable.tpl"}

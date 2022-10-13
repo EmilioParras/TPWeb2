@@ -10,7 +10,7 @@
                             <h5 class="card-title">{$deportiveShoe->nombre}</h5>
                             <p class="card-text">Talles disponibles: {$deportiveShoe->talle}</p>
                             <p class="card-text">Precio: {$deportiveShoe->precio}$</p>
-                            <a href="home" class="btn btn-primary">Ver detalles</a>
+                            <a href="show/{$deportiveShoe->id}" class="btn btn-primary">Ver detalles</a>
                         </div>
                     </div>
                 {/foreach}
