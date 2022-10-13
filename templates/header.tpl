@@ -34,38 +34,45 @@
             <a class="nav-link text-black" href="iniciar-sesion">Logearse</a>
           </li>
           <li class="nav-item">
-          <div class="dropdown">
-            <a class="btn dropdown-toggle" href="inicio" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              Zapatillas
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="zapatillas-urbanas">Zapatillas Urbanas</a></li>
-              <li><a class="dropdown-item" href="zapatillas-deportivas">Zapatillas Deportivas</a></li>
-            </ul>
-        </div>
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Zapatillas
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="zapatillas-urbanas">Zapatillas Urbanas</a></li>
+                <li><a class="dropdown-item" href="zapatillas-deportivas">Zapatillas Deportivas</a></li>
+              </ul>
+            </div>
           </li>
+          {* {if !isset($smarty.session.USER_ID)}
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="iniciar-sesion">Login</a>
+            </li>
+          {else} 
+            <li class="nav-item ml-auto">
+              <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+            </li>
+          {/if} *}
+
           <li class="nav-item">
-            <a class="nav-link text-black" href="acerca-de">Sobre Nosotros</a>
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Admin site
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="tabla-administrador">Tabla de productos</a></li>
+              </ul>
+            </div>
           </li>
-          <div class="dropdown">
-            <a class="btn dropdown-toggle" href="inicio" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              Admin site
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="tabla-administrador">Tabla de productos</a></li>
-              <li><a class="dropdown-item" href="agregar-producto">Agregar producto</a></li>
-            </ul>
-        </div>
           </ul>
-          <img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/icon.png" alt="icono">
-          <img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/carro-de-la-compra.png" alt="icono">
+          <a href="iniciar-sesion"><img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/login.png" alt="icono"></a>
       </div>
     </div>
   </nav>
   <!-- Navbar -->
 
   <div class="p-5 text-center bg-light shadow-lg p-3 mb-5 bg-body rounded">
-    <h1 class="mb-3 text-black">Just Us Store</h1>
+    <h1 class="display-1 mb-3 text-black">Just Us Store</h1>
   </div>
   
 </header>

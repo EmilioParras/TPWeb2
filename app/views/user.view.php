@@ -1,7 +1,7 @@
 <?php
 require_once './librerias/Smarty/libs/Smarty.class.php';
 
-class AuthView {
+class UserView {
     
     private $smarty;
 
@@ -15,10 +15,8 @@ class AuthView {
             $this->smarty->display('templates/loginTemplates/login.tpl');
         }
 
-        public function register() {
+        public function showFormRegister () {
             $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/loginTemplates/register.tpl');
         }
-
-
     }

@@ -36,7 +36,7 @@ class ZapatillasView {
         public function showAdminTable($allTableInfo) {
             $this->smarty->assign('informacionTablaAdmin', $allTableInfo);
             $this->smarty->display('templates/header.tpl');
-            $this->smarty->display('templates/tablaAdmin.tpl');
+            $this->smarty->display('templates/adminSite/tablaAdmin.tpl');
         }
 
         public function aboutUs() {
@@ -47,7 +47,11 @@ class ZapatillasView {
 
         public function showAddTable() {
             $this->smarty->display('templates/header.tpl');
-            $this->smarty->display('templates/agregarProducto.tpl');
+            $this->smarty->display('templates/adminSite/agregarProducto.tpl');
         }
 
+        public function showEditTable() {
+            $this->smarty->display('templates/header.tpl');
+            $this->smarty->display('templates/adminSite/editTable.tpl');
+        }
 }

@@ -1,19 +1,24 @@
 <?php
 require_once './app/controllers/zapatillas.controller.php';
+require_once './app/controllers/admintable.controller.php';
 require_once './app/controllers/auth.controller.php';
 
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+define("LOGIN", BASE_URL . 'iniciar-sesion');
+define("INICIO", BASE_URL . 'inicio');
+define("ADMINTABLE", BASE_URL . 'tabla-administrador');
+define("ADD", BASE_URL . 'add');
 
-$action = 'home'; 
+
+
+
+$action = 'inicio'; 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
 
 $params = explode('/', $action);
-
-$zapatillasController = new ZapatillasController();
-$authController = new AuthController();
 
 switch ($params[0]) {
     case 'inicio' : 
@@ -28,40 +33,36 @@ switch ($params[0]) {
         $zapatillasController = new ZapatillasController();
         $zapatillasController->showDeportiveShoes();
         break;     
-    case 'acerca-de' :
-        $authController = new AuthController();
-        $authControllerauthController->aboutUs();
-        break;
-    case 'contactanos' :
-        $zapatillasController = new ZapatillasController();
-        $zapatillasController->contactUs();
-        break;
     case 'iniciar-sesion' :
         $authController = new AuthController();
         $authController->showFormLogin();
         break;
+    case 'validate' :
+        $authController = new AuthController();
+        $authController->validateUser();
     case 'registrarse' :
         $authController = new AuthController();
         $authController->register();
         break;
     case 'tabla-administrador' :
-        $zapatillasController = new ZapatillasController();
-        $zapatillasController->showAdminTable();
+        $adminTableController = new AdminController();
+        $adminTableController->showAdminTable();
         break;
     case 'add' :
-        $zapatillasController = new ZapatillasController();
-        $zapatillasController->addProduct();
+        $adminTableController = new AdminController();
+        $adminTableController->addProduct();
         break;   
     case 'borrar':
-    $ZapatillasController = new ZapatillasController();
-    $id = $params[1];
-    $ZapatillasController->deleteShoe($id);
-    break;
-    // case 'edit' : 
-    //     $functionalController = new FunctionalController();
-    //     $id = params
-    //     break;
+        $adminTableController = new AdminController();
+        $id = $params[1];
+        $adminTableController->deleteShoe($id);
+        break;
+    case 'edit' : 
+        $adminTableController = new AdminController();
+        $id = $params[0];
+        $adminTableController->editShoe($id);
+        break;
     default:
-        echo('404 Page not found');
+        echo('no anda');
         break;
 }

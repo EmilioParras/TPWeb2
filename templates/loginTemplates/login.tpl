@@ -10,7 +10,7 @@
           <div class="mb-md-5 mt-md-4 pb-5">
 
             <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
-            <p class="text-white-50 mb-5">Por favor ingresa tu email y contraseña</p>
+            <p class="text-white-50 mb-5">Por favor ingresa tu email y contraseña.</p>
 
             <form method="POST" action="validate">
               <div class="form-outline form-white mb-4">

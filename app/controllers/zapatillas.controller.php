@@ -1,15 +1,18 @@
 <?php
 require_once './app/models/zapatillas.model.php';
 require_once './app/views/zapatillas.view.php';
+require_once './app/helpers/auth.helper.php';
 
     class ZapatillasController  {
         
         private $model;
         private $shoesview;
+        // private $authHelper;
     
             public function __construct() {
                 $this->model = new ZapatillasModel();
                 $this->shoesview = new ZapatillasView();
+                // $this->authHelper = new AuthHelper();
             }
 
             public function showZapatillas() {
@@ -25,31 +28,6 @@ require_once './app/views/zapatillas.view.php';
             public function showDeportiveShoes() {
                 $deportiveShoes = $this->model->getDeportiveShoes();
                 $this->shoesview->showDeportiveShoes($deportiveShoes);
-            }
-
-            public function showAdminTable() {
-                $allTableInfo = $this->model-> getAllTableInfo();
-                $this->shoesview->showAdminTable($allTableInfo);
-            }
-
-            public function addProduct() {
-                $this->shoesview->showAddTable();
-
-                $nombre = $_POST['nombre']; 
-                $marca = $_POST['marca'];
-                $price = $_POST['price'];
-                $talles = $_POST['talles'];
-                // $imagen = $_POST['imagen'];
-                $category = $_POST['category'];
-
-                $id = $this->model->insertProduct($nombre, $marca, $price, $talles, $category);
-
-                header("Location: " . BASE_URL); 
-            }
-
-            public function deleteShoe($id) {
-                $this->model->deleteShoe($id);
-                header("Location: " . BASE_URL);
             }
 
 }

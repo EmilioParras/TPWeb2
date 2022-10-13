@@ -22,9 +22,14 @@
         <td>{$tableInfo->talle}</td>
         <td>{$tableInfo->imagen}</td>
         <td>{$tableInfo->id_categoria_fk}</td>
-        <td><a href='borrar/{$tableInfo->id}' type="button" class="btn btn-danger">Borrar</a></td>
+        <td>
+          <a href='borrar/{$tableInfo->id}' type="button" class="btn btn-danger">Borrar</a> 
+          <a href='edit/{$tableInfo->id}' type="button" class="btn btn-success">Editar</a>
+        </td>
       </tr>
     {/foreach} 
       
     </tbody>
   </table>
+
+  {include file="./agregarProducto.tpl"}

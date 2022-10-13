@@ -35,25 +35,24 @@
                 return $urbanShoes;
             }
 
-            public function getAllTableInfo() {
-                $query = $this->db->prepare("SELECT * FROM zapatillas");
-                $query->execute();
-
-                $allTableInfo = $query->fetchAll(PDO::FETCH_OBJ);
-
-                return $allTableInfo;
-            }
-
-            public function insertProduct($nombre, $marca, $price, $talles, $category) {
-                $query = $this->db->prepare("INSERT INTO zapatillas (nombre, marca, precio, talle, id_categoria_fk) VALUES (?, ?, ?, ?, ?)");
-                $query->execute([$nombre, $marca, $price, $talles, $category]);
+            public function insertProduct($nombre, $marca, $precio, $talles, /*$imagen,*/ $category) {
+                $query = $this->db->prepare("INSERT INTO zapatillas (nombre, marca, precio, talle, /*imagen,*/ id_categoria_fk) VALUES (/*?,*/ ?, ?, ?, ?, ?)");
+                $query->execute([$nombre, $marca, $precio, $talles, /*$imagen,*/ $category]);
 
                 return $this->db->lastInsertId();
             }
 
-            function deleteShoe($id) {
+            public function deleteShoe($id) {
                 $query = $this->db->prepare("DELETE FROM zapatillas WHERE id = ?");
                 $query->execute([$id]);
+            }
+
+            public function editShoe($eNombre, $eMarca, $ePrecio, $eTalles, $eCategory) {
+                $query = $this->db->prepare("UPDATE zapatillas SET nombre = ?, marca = ?, precio = ?, talle = ?, id_categoria_fk = ?;");
+                $query->execute([$eNombre, $eMarca, $ePrecio, $eTalles, $eCategory]);
+
+                return $this->db->lastInsertId();
+
             }
         
 
