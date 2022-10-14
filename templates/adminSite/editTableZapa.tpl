@@ -8,7 +8,7 @@
                                     <div class="card-header">   
                                         Ingresar nuevos datos:
                                     </div>
-                                    <form class="p-4" method="POST" action="updated/{$editedShoe->id}">
+                                    <form class="p-4" method="POST" action="updated-zapa/{$editedShoe->id}">
                                         <div class="mb-3">
                                             <label class="form-label">Nombre:</label>
                                             <input type="text" class="form-control" id="editNombre" name="editNombre" placeholder="{$editedShoe->nombre}">

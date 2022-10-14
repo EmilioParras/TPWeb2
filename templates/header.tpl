@@ -35,36 +35,29 @@
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Zapatillas
-              </a>
+              <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Zapatillas </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="zapatillas-urbanas">Zapatillas Urbanas</a></li>
-                <li><a class="dropdown-item" href="zapatillas-deportivas">Zapatillas Deportivas</a></li>
+                {foreach from=$showCategorias item=$categoria} 
+                  <li><a class="dropdown-item" href="categoria/{$categoria->id}">Hola{$categoria->nombre}</a></li>
+                {/foreach} 
               </ul>
             </div>
           </li>
-            {if !isset($smarty.session.USER_ID)}
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="iniciar-sesion">Login</a>
+                <a class="nav-link text-black" aria-current="page" href="iniciar-sesion">Login</a>
               </li>
-            {else} 
               <li class="nav-item ml-auto">
-                <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+                <a class="nav-link" aria-current="page" href="logout">Logout </a>
               </li>
-            {/if} 
-          <li class="nav-item">
             <div class="dropdown">
-              <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Admin site
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="tabla-administrador">Tabla de productos</a></li>
-              </ul>
+                <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin Table</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li class="nav-item"><a class="nav-link text-black" href="tabla-administrador-zapatillas">Tabla administrador de zapatillas</a></li>
+                  <li class="nav-item"><a class="nav-link text-black" href="tabla-administrador-categorias">Tabla administrador de categorias</a></li>
+                </ul>
             </div>
-          </li>
           </ul>
-          <a href="iniciar-sesion"><img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/login.png" alt="icono"></a>
+          <a><img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/icon.png" alt="icono"></a>
       </div>
     </div>
   </nav>

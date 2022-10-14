@@ -11,7 +11,7 @@
         <!-- Grid column -->
         <div class="col-md-2">
           <h6 class="text-uppercase font-weight-bold">
-            <a href="acerca-de" class="text-white">Sobre Nosotros</a>
+            <a href="#!" class="text-white">Sobre Nosotros</a>
           </h6>
         </div>
         <!-- Grid column -->
@@ -35,7 +35,7 @@
         <!-- Grid column -->
         <div class="col-md-2">
           <h6 class="text-uppercase font-weight-bold">
-            <a href="contactanos" class="text-white">Contactanos</a>
+            <a href="#!" class="text-white">Contactanos</a>
           </h6>
         </div>
         <!-- Grid column -->
@@ -51,10 +51,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            distinctio earum repellat quaerat voluptatibus placeat nam,
-            commodi optio pariatur est quia magnam eum harum corrupti
-            dicta, aliquam sequi voluptate quas.
+            TODOS LOS DERECHOS RESERVADOS
           </p>
         </div>
       </div>
@@ -63,23 +60,19 @@
 
     <!-- Section: Social -->
     <section class="text-center mb-5">
-      <a href="" class="text-white me-4">
-        <i class="fab fa-facebook-f"></i>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-facebook-f">Facebook</i>
       </a>
-      <a href="" class="text-white me-4">
-        <i class="fab fa-twitter"></i>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-twitter">Twitter</i>
       </a>
-      <a href="" class="text-white me-4">
-        <i class="fab fa-google"></i>
+     
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-instagram">Instagram</i>
       </a>
-      <a href="" class="text-white me-4">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="text-white me-4">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="text-white me-4">
-        <i class="fab fa-github"></i>
+      
+      <a href="https://github.com/EmilioParras" class="text-white me-4">
+        <i class="fab fa-github">GitHub</i>
       </a>
     </section>
   </div>

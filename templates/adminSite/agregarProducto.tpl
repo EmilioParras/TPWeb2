@@ -5,7 +5,7 @@
         <div class="col-6 col-md-6 col-lg-6 col-xl-6">
             <div class="card bg-dark text-white" style="border-radius: 1rem;">
                 <div class="card-body p-5 text-center">
-                    <form action="add" method="POST" enctype="multipart/form-data" class="my-4">
+                    <form action='add-zapa' method="POST" enctype="multipart/form-data" class="my-4">
                         <div class="row">
                             <div class="form-group">
                                 <h1>Agregar producto</h1>
@@ -25,10 +25,6 @@
                                     <label>Talles disponibles</label>
                                     <input name="addTalles" type="text" class="form-control">
                                 </div>
-                                {* <div>
-                                    <label>Imagen</label>
-                                    <input type="file" name="addImagen">
-                                </div> *}
                                 <div class="form-outline form-white mb-4">  
                                     <label>Categoria</label>
                                     <select id="addCategory" name="addCategory" class="form-control">

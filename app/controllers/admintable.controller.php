@@ -1,53 +1,57 @@
 <?php
-
+require_once './app/models/CategoryModel.php';
 require_once './app/models/zapatillas.model.php';
 require_once './app/views/admintable.view.php';
 require_once './app/helpers/auth.helper.php';
 
     class AdminController {
 
-        private $model;
-        private $shoesview;
+        private $zapaModel;
+        private $categoryModel;
+        private $adminView;
+        private $email;
     
         public function __construct() {
-            $this->model = new ZapatillasModel();
-            $this->adminview = new AdminView();     
-        }        
+            $this->zapaModel = new ZapatillasModel();
+            $this->adminView = new AdminView();    
+            $this->categoryModel = new CategoryModel();    
+            session_start(); 
+            $this->setEmail();
+        }      
+        
+        public function setEmail() {
+            if (isset ($_SESSION['EMAIL_USER'])){
+                $this->email = $_SESSION['EMAIL_USER'];
+            } 
+        }
 
-        public function showAdminTable() {
-            // $this->authHelper->checkLogged();
-
-            $allZapatillas = $this->model->getAllZapatillas();
-            $this->adminview->showAdminTable($allZapatillas);
+        public function showAdminTableZapatillas() {
+            $allZapatillas = $this->zapaModel->getAllZapatillas();
+            $this->adminView->showAdminTZapatillas($allZapatillas, $this->email);
         }
 
         public function addProduct() {
-            // $this->authHelper->checkLogged();
 
             $nombre = $_POST['addNombre']; 
             $marca = $_POST['addMarca'];
             $precio = $_POST['addPrecio'];
             $talles = $_POST['addTalles'];
             $category = $_POST['addCategory'];
-            //$imagen = $_POST['addImagen'];
             
-            $product = $this->model->insertProduct($nombre, $marca, $precio, $talles, /*$imagen,*/ $category);
+            $this->zapaModel->insertProduct($nombre, $marca, $precio, $talles, $category);
 
-
-            header("Location: " . ADMINTABLE);
-
+            header("Location: " . ADMINTABLEZAPA);
         }
         
         public function deleteShoe($id) {
-            // $this->authHelper->checkLogged();
-
-            $this->model->deleteShoe($id);
-            header("Location: " . ADMINTABLE);
+            $this->zapaModel->deleteShoe($id);
+            
+            header("Location: " . ADMINTABLEZAPA);
         }
 
         public function editShoe($id) {
-            $shoe = $this->model->editShoeById($id);
-            $this->adminview->showEditTable($shoe);
+            $shoe = $this->zapaModel->editShoeById($id);
+            $this->adminView->showEditTable($shoe);
 
         }
 
@@ -58,7 +62,7 @@ require_once './app/helpers/auth.helper.php';
             $eTalles = $_POST['editTalle']; 
             $eCategory = $_POST['editCategory']; 
             
-            $this->model->updatedShoeById($id, $eNombre, $eMarca, $ePrecio, $eTalles, $eCategory);
-            header("Location: " . ADMINTABLE);
+            $this->zapaModel->updatedShoeById($id, $eNombre, $eMarca, $ePrecio, $eTalles, $eCategory);
+            header("Location: " . ADMINTABLEZAPA);
         }
 }

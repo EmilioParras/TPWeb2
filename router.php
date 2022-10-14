@@ -2,12 +2,14 @@
 require_once './app/controllers/zapatillas.controller.php';
 require_once './app/controllers/admintable.controller.php';
 require_once './app/controllers/auth.controller.php';
+require_once './app/controllers/CategoryController.php';
 
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 define("LOGIN", BASE_URL . 'iniciar-sesion');
 define("INICIO", BASE_URL . 'inicio');
-define("ADMINTABLE", BASE_URL . 'tabla-administrador');
+define("ADMINTABLEZAPA", BASE_URL . 'tabla-administrador-zapatillas');
+define("ADMINTABLECATEGORIA", BASE_URL . 'tabla-administrador-categorias');
 define("ADD", BASE_URL . 'add');
 
 
@@ -36,8 +38,13 @@ switch ($params[0]) {
     case 'show' :
         $zapatillasController = new ZapatillasController();
         $id = $params[1];
-        $zapatillasController->showShoe($id);     
-        break;   
+        $zapatillasController->showShoeById($id);     
+        break;
+    case 'categoria' :
+        $CategoryController = new CategoryController();
+        $id = $params[1];
+        $CategoryController->showCategoryById($id);
+        break;
     case 'iniciar-sesion' :
         $authController = new AuthController();
         $authController->showFormLogin();
@@ -45,33 +52,61 @@ switch ($params[0]) {
     case 'validate' :
         $authController = new AuthController();
         $authController->validateUser();
-    case 'registrarse' :
+        break;
+    case 'logout' : 
         $authController = new AuthController();
-        $authController->register();
+        $authController->logout();
         break;
-    case 'tabla-administrador' :
+    case 'tabla-administrador-zapatillas' :
         $adminTableController = new AdminController();
-        $adminTableController->showAdminTable();
+        $adminTableController->showAdminTableZapatillas();
         break;
-    case 'add' :
+    case 'tabla-administrador-categorias' :
+        $CategoryController = new CategoryController();
+        $CategoryController->showAdminTableCategorias();
+        break;
+    case 'add-category' :
+        $CategoryController = new CategoryController();
+        $CategoryController->addCategory();
+        break;   
+    case 'borrar-category' :
+        $CategoryController = new CategoryController();
+        $id = $params[1];
+        $CategoryController->deleteCategory($id);
+        break;    
+    case 'edit-category' : 
+        $CategoryController = new CategoryController();
+        $id = $params[1];
+        $CategoryController->editCategory($id);
+        break;
+    case 'updated-categoria' :
+        $CategoryController = new CategoryController();
+        $id = $params[1];
+        $CategoryController->sendEditCategory($id);
+        break;
+    case 'add-zapa' :
         $adminTableController = new AdminController();
         $adminTableController->addProduct();
         break;   
-    case 'borrar':
+    case 'borrar-zapa':
         $adminTableController = new AdminController();
         $id = $params[1];
         $adminTableController->deleteShoe($id);
         break;
-    case 'edit' : 
+    case 'edit-zapa' : 
         $adminTableController = new AdminController();
         $id = $params[1];
         $adminTableController->editShoe($id);
         break;
-    case 'updated' :
+    case 'updated-zapa' :
         $adminTableController = new AdminController();
         $id = $params[1];
         $adminTableController->sendEditShoe($id);
-        break;    
+        break;  
+    case 'add-category' : 
+        $CategoryController = new CategoryController();
+        $CategoryController->addCategory();
+        break;
     default:
         echo('no anda');
         break;

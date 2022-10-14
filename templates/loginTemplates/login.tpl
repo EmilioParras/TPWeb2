@@ -15,12 +15,12 @@
             <form method="POST" action="validate">
               <div class="form-outline form-white mb-4">
                 <label class="form-label" for="email">Email</label>
-                <input type="email" id="email" required class="form-control form-control-lg" name="email" />
+                <input type="email" name="logEmail" id="logEmail" class="form-control form-control-lg" required />
               </div>
 
               <div class="form-outline form-white mb-4">
                 <label class="form-label" for="typePasswordX">Contraseña</label>
-                <input type="password" required  id="password" class="form-control form-control-lg" name="password" />
+                <input type="password" name="logPassword" id="logPassword" class="form-control form-control-lg"  required/>
               </div>
               
               <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="inicio">Olvidaste tu contraseña?</a></p> 
@@ -29,8 +29,8 @@
                 <div class="alert alert-danger mt-3">
                     {$error}
                 </div>
-            {/if}
-    
+              {/if}
+              
               <button class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesion</button>
             </form>
 

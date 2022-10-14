@@ -41,9 +41,9 @@
                 return $query->fetch(PDO::FETCH_OBJ);
             }
 
-            public function insertProduct($nombre, $marca, $precio, $talles, /*$imagen,*/ $category) {
-                $query = $this->db->prepare("INSERT INTO zapatillas (nombre, marca, precio, talle, /*imagen,*/ id_categoria_fk) VALUES (/*?,*/ ?, ?, ?, ?, ?)");
-                $query->execute([$nombre, $marca, $precio, $talles, /*$imagen,*/ $category]);
+            public function insertProduct($nombre, $marca, $precio, $talles,  $category) {
+                $query = $this->db->prepare("INSERT INTO zapatillas (nombre, marca, precio, talle, id_categoria_fk) VALUES (?, ?, ?, ?, ?)");
+                $query->execute([$nombre, $marca, $precio, $talles, $category]);
 
                 return $this->db->lastInsertId();
             }
@@ -64,7 +64,7 @@
                 $query = $this->db->prepare("UPDATE zapatillas SET nombre = ?, marca = ?, precio = ?, talle = ?, id_categoria_fk = ? WHERE id= ? ");
                 $query->execute([$eNombre, $eMarca, $ePrecio, $eTalles, $eCategory, $id]);
 
-                header("Location: " . ADMINTABLE);
+                header("Location: " . ADMINTABLEZAPA);
             }
         
     }

@@ -10,10 +10,10 @@ Class AdminView {
         $this->smarty = new Smarty();
     }
 
-    public function showAdminTable($allTableInfo) {
-        $this->smarty->assign('informacionTablaAdmin', $allTableInfo);
+    public function showAdminTZapatillas($allZapatillas) {
+        $this->smarty->assign('informacionTablaAdminZapatillas', $allZapatillas);
         $this->smarty->display('templates/header.tpl');
-        $this->smarty->display('templates/adminSite/tablaAdmin.tpl');
+        $this->smarty->display('templates/adminSite/tablaAdminZapatillas.tpl');
     }
 
     public function showAddTable() {
@@ -24,6 +24,6 @@ Class AdminView {
     public function showEditTable($shoe) {
         $this->smarty->assign('editedShoe', $shoe);
         $this->smarty->display('templates/header.tpl');
-        $this->smarty->display('templates/adminSite/editTable.tpl');
+        $this->smarty->display('templates/adminSite/editTableZapa.tpl');
     }
 }
