@@ -35,9 +35,10 @@
                                         <div class="mb-3">
                                         <label>Categoria</label>
                                         <select  class="form-control" id="editCategory" name="editCategory">
-                                            <option value="1">Urbana</option>
-                                            <option value="2">Deportiva</option>
-                                        </select>
+                                        {foreach from=$categorias item=$categoria }
+                                                <option value="{$categoria->id}">{$categoria->nombreCategoria}</option>
+                                            {/foreach}
+                                            </select>
                                         <button type="submit" class="btn btn-primary mt-5">Editar</button>
                                     </form>
                                 </div>

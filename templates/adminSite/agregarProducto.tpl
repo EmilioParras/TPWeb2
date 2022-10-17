@@ -26,10 +26,11 @@
                                     <input name="addTalles" type="text" class="form-control">
                                 </div>
                                 <div class="form-outline form-white mb-4">  
-                                    <label>Categoria</label>
-                                    <select id="addCategory" name="addCategory" class="form-control">
-                                        <option value="1">Urbana</option>
-                                        <option value="2">Deportiva</option>
+                                <label>Categoria</label>
+                                <select id="addCategory" name="addCategory" class="form-control">
+                                {foreach from=$categorias item=$categoria}    
+                                        <option value="{$categoria->id}">{$categoria->nombreCategoria}</option>
+                                    {/foreach}
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-2">Agregar</button>

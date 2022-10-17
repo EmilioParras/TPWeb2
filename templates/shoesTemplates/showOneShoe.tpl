@@ -1,3 +1,4 @@
+{include file="header.tpl" }
 
 <section class="vh-100 gradient-custom">
 <div class="container py-5 h-100">
@@ -17,7 +18,7 @@
                                 <h2 class="text-black text-uppercase">Informacion:</h2>
                                 <p class="text-black">Nombre: {$oneShoeById->nombre}</p>
                                 <p class="text-black">Marca: {$oneShoeById->marca}</p>
-                                <p class="text-black">Precio: {$oneShoeById->precio}</p>
+                                <p class="text-black">Precio: {$oneShoeById->precio}$</p>
                                 <p class="text-black">Talles disponibles: {$oneShoeById->talle}</p>
                                 </div>
                             </div>

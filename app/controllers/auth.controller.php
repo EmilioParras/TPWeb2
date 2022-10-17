@@ -2,8 +2,6 @@
 require_once './app/models/user.model.php';
 require_once './app/views/user.view.php';
 
-
-
     class AuthController {
 
         private $model; 
@@ -37,10 +35,8 @@ require_once './app/views/user.view.php';
                 // verifico que el usuario exista y que los datos coincidan
                 if ($user && password_verify($password, $user->password)) {
                 
-                    // inicio una sesion para este usuario
                     session_start();
                     $_SESSION['USER_EMAIL'] = $user->email;
-                    $_SESSION['IS_LOGGED'] = true;
                  
                 header("Location: " . INICIO );  
             } else {

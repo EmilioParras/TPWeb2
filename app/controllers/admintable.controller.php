@@ -27,7 +27,8 @@ require_once './app/helpers/auth.helper.php';
 
         public function showAdminTableZapatillas() {
             $allZapatillas = $this->zapaModel->getAllZapatillas();
-            $this->adminView->showAdminTZapatillas($allZapatillas, $this->email);
+            $allCategorias = $this->categoryModel->getAllCategorias();
+            $this->adminView->showAdminTZapatillas($allZapatillas, $allCategorias, $this->email);
         }
 
         public function addProduct() {
@@ -51,7 +52,8 @@ require_once './app/helpers/auth.helper.php';
 
         public function editShoe($id) {
             $shoe = $this->zapaModel->editShoeById($id);
-            $this->adminView->showEditTable($shoe);
+            $allCategorias = $this->categoryModel->getAllCategorias();
+            $this->adminView->showEditTable($shoe, $allCategorias);
 
         }
 

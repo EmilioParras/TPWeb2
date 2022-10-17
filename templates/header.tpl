@@ -37,18 +37,21 @@
             <div class="dropdown">
               <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Zapatillas </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                {foreach from=$showCategorias item=$categoria} 
-                  <li><a class="dropdown-item" href="categoria/{$categoria->id}">Hola{$categoria->nombre}</a></li>
+                {foreach from=$categorias item=$categoria} 
+                  <li><a class="dropdown-item" href="categoria/{$categoria->id}">{$categoria->nombreCategoria}</a></li>
                 {/foreach} 
               </ul>
             </div>
           </li>
+            {if !email}    
               <li class="nav-item">
                 <a class="nav-link text-black" aria-current="page" href="iniciar-sesion">Login</a>
               </li>
+            {else}
               <li class="nav-item ml-auto">
                 <a class="nav-link" aria-current="page" href="logout">Logout </a>
               </li>
+            {/if}
             <div class="dropdown">
                 <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin Table</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">

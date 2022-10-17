@@ -6,9 +6,9 @@
                         <div class="card-body p-5 text-center">
                                 <div class="row">
                                     <div class="card-header">   
-                                        <h2>Ingresar nuevos datos:</h2>
+                                        <h2>Ingresar los nuevos datos:</h2>
                                     </div>
-                                    <form class="p-4" method="POST" action="updated-categoria/{$categoria->id}">
+                                    <form class="p-4" method="POST" action="updated-category/{$categoria->id}">
                                         <div class="mb-3">
                                             <label class="form-label">Nombre:</label>
                                             <input type="text" class="form-control" id="editCategoria" name="editCategoria" placeholder="{$categoria->nombreCategoria}">

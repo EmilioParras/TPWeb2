@@ -37,6 +37,12 @@ require_once './app/views/CategoryView.php';
             header("Location: " . ADMINTABLECATEGORIA);
         }
 
+        
+        public function editCategory($id) {
+            $category = $this->model->editCategoryById($id);
+            $this->view->showEditTable($category);
+        }
+        
         public function sendEditCategory($id) {
                 $categoria = $_POST['editCategoria']; 
                 $descripcion = $_POST['editDescripcion']; 
@@ -44,13 +50,7 @@ require_once './app/views/CategoryView.php';
                 $this->model->updatedCategoryById($id, $categoria, $descripcion);
                 header("Location: " . ADMINTABLECATEGORIA);
         }
-
-        public function editCategory($id) {
-            $category = $this->model->editCategoryById($id);
-            $this->view->showEditTable($category);
-
-        }
-
+        
         public function deleteCategory($id) {
             $this->model->deleteCategoryById($id);
             
@@ -58,14 +58,14 @@ require_once './app/views/CategoryView.php';
         }
 
         public function Categorias() {
-            $categorias = $this->model->getAllCategorias();
-            $this->view->showAllCategorias($categorias);
+            $allCategorias = $this->model->getAllCategorias();
+            $this->view->showAllCategorias($allCategorias);
         }
 
         public function showCategoryById($id) {
             $zapatillasById = $this->model->getZapatillasById($id);
             $categorias = $this->model->getAllCategorias();
-            $this->view->ZapatillasByCategoria($zapatillasById, $categorias, $this->email);
+            $this->view->ZapatillasByCategoria($zapatillasById, $categorias, $id, $this->email);
         }
 
 }

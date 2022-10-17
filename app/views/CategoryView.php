@@ -9,15 +9,17 @@ require_once './librerias/Smarty/libs/Smarty.class.php';
             $this->smarty = new Smarty();
         }
         
-        public function showAllCategorias($categorias) {
-            $this->smarty->assign('categorias', $categorias);
+        public function showAllCategorias($allCategorias) {
+            $this->smarty->assign('categorias', $allCategorias);
+            $this->smarty->display('templates/header.tpl');
         }
 
-        public function ZapatillasByCategoria($zapatillasById, $categorias, $email = null) {
+        public function ZapatillasByCategoria($zapatillasById, $categorias, $id, $email = null) {
             $this->smarty->assign('email', $email);
+            $this->smarty->assign('id', $id);
             $this->smarty->assign('zapatillasById', $zapatillasById);
             $this->smarty->assign('showCategorias', $categorias);
-            $this->smarty->display('header.tpl');
+            $this->smarty->display('templates/shoesTemplates/shoesByCategory.tpl');
         }
 
         public function showAdminTableCategorias($allCategorias) {

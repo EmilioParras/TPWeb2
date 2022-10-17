@@ -26,8 +26,9 @@ require_once './app/models/CategoryModel.php';
         }
         
         public function showZapatillas() {
+            $allCategorias = $this->categoryModel->getAllCategorias();
             $todasZapatillas = $this->model->getAllZapatillas();
-            $this->shoesview->showZapatillas($todasZapatillas);
+            $this->shoesview->showZapatillas($todasZapatillas, $allCategorias);
         }
 
         public function showUrbanShoes() {

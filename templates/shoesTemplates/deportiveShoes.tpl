@@ -1,3 +1,5 @@
+{include file="header.tpl" }
+
 
     <div class="container d-flex justify-content-center">
     <div class="align-items-center">

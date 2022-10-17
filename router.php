@@ -12,9 +12,6 @@ define("ADMINTABLEZAPA", BASE_URL . 'tabla-administrador-zapatillas');
 define("ADMINTABLECATEGORIA", BASE_URL . 'tabla-administrador-categorias');
 define("ADD", BASE_URL . 'add');
 
-
-
-
 $action = 'inicio'; 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
@@ -79,7 +76,7 @@ switch ($params[0]) {
         $id = $params[1];
         $CategoryController->editCategory($id);
         break;
-    case 'updated-categoria' :
+    case 'updated-category' :
         $CategoryController = new CategoryController();
         $id = $params[1];
         $CategoryController->sendEditCategory($id);
