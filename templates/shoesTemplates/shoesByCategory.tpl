@@ -12,6 +12,8 @@
                         <h5 class="card-title">{$zapatillaId->nombre}</h5>
                         <p class="card-text">Talles disponibles: {$zapatillaId->talle}</p>
                         <p class="card-text">Precio: {$zapatillaId->precio}$</p>
+                        <a href="show/{$zapatillaId->id}" class="btn btn-primary">Ver detalles</a>
+
                     </div>
                 </div>
             {/foreach}

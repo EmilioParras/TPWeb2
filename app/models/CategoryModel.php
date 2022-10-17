@@ -44,7 +44,7 @@ class CategoryModel {
     }
 
     public function getZapatillasById($id) {
-        $query = $this->categoryDb->prepare("SELECT zapatillas.nombre, zapatillas.imagen, zapatillas.marca, zapatillas.precio, zapatillas.talle 
+        $query = $this->categoryDb->prepare("SELECT zapatillas.id, zapatillas.nombre, zapatillas.imagen, zapatillas.marca, zapatillas.precio, zapatillas.talle 
         FROM zapatillas JOIN categoria 
         ON zapatillas.id_categoria_fk = categoria.id WHERE zapatillas.id_categoria_fk = ?");
         $query->execute([$id]);

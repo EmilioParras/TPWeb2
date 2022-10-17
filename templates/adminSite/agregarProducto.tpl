@@ -25,6 +25,10 @@
                                     <label>Talles disponibles</label>
                                     <input name="addTalles" type="text" class="form-control">
                                 </div>
+                                <div class="form-outline form-white mb-4">   
+                                    <label>Imagen</label>
+                                    <input name="input_name" type="file" class="form-control">
+                                </div>
                                 <div class="form-outline form-white mb-4">  
                                 <label>Categoria</label>
                                 <select id="addCategory" name="addCategory" class="form-control">

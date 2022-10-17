@@ -39,10 +39,19 @@ require_once './app/helpers/auth.helper.php';
             $talles = $_POST['addTalles'];
             $category = $_POST['addCategory'];
             
-            $this->zapaModel->insertProduct($nombre, $marca, $precio, $talles, $category);
-
-            header("Location: " . ADMINTABLEZAPA);
-        }
+            if($_FILES['input_name']['type'] == "image/jpg" || 
+            $_FILES['input_name']['type'] == "image/jpeg" ||
+            $_FILES['input_name']['type'] == "image/png" ) {
+ 
+             $this->zapaModel->insertProduct($nombre, $marca, $precio, $talles, $category,
+             $_FILES['input_name']['tmp_name']);
+             header("Location: " . ADMINTABLEZAPA);
+            }
+            else {        
+                $this->zapaModel->insertProduct($nombre, $marca, $precio, $talles, $category);
+                header("Location: " . ADMINTABLEZAPA);
+                }
+            }
         
         public function deleteShoe($id) {
             $this->zapaModel->deleteShoe($id);
