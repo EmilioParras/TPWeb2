@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2022 a las 03:09:59
+-- Tiempo de generación: 17-10-2022 a las 20:56:06
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -40,10 +40,7 @@ CREATE TABLE `categoria` (
 INSERT INTO `categoria` (`id`, `nombreCategoria`, `descripcion`) VALUES
 (1, 'Urbana', 'Zapatillas urbanas para el dia a dia.'),
 (2, 'Deportiva', 'Zapatillas deportivas ideales para todo tipo de actividad.'),
-(3, 'Montaña', 'Zapatillas ideales para un paseo por las montañas.'),
-(5, 'Moda', 'Zapatillas ideales para ir a la moda.'),
-(43, 'caca', 'caca'),
-(45, 'jeje', '');
+(3, 'Montaña', 'Zapatillas ideales para un paseo por las montañas.');
 
 -- --------------------------------------------------------
 
@@ -89,9 +86,13 @@ INSERT INTO `zapatillas` (`id`, `nombre`, `marca`, `precio`, `talle`, `imagen`, 
 (1, 'Nike Air Force 1', 'Nike', 25000, '39-40-41-41.5', './imagenes/ZapatillasUrbanas/NikeAirForce1.jpg', 1),
 (2, 'Adidas Breaknet', 'Adidas', 25000, '39-40-41 ', './imagenes/ZapatillasUrbanas/AdidasBreaknet.jpg', 1),
 (3, 'Vans U Old Skool', 'Vans', 15000, '39-40-41-41.5-42', './imagenes/ZapatillasUrbanas/VansUOldSkool.jpg', 1),
-(4, 'Jhoon Foos Claw Black', 'Jhon Foos', 23000, '40-41-42', './imagenes/ZapatillasUrbanas/JhonFoosClawBlack.jpg', 1),
-(5, 'Zapatillas Adidas Core racer', 'Adidas', 14500, '39-40-41', './imagenes/ZapatillasDeportivas/ZapatillasAdidasCoreracer.jpg', 2),
-(74, 'Zapatilla de montaña', 'Topper', 25, '39-40-41', '', 2);
+(4, 'Jhon Foos Claw Black', 'Jhon Foos', 25000, '40-41-42', './imagenes/ZapatillasUrbanas/JhonFoosClawBlack.jpg', 1),
+(117, 'Zapatillas Air Max Sc', 'Nike', 30000, '39-40-41', 'imagenes/634da1a1d99a3.jpg.jpeg.png', 2),
+(119, 'Zapatillas Adidas Coreracer', 'Adidas', 23000, '40-41', 'imagenes/634da23858b5f.jpg.jpeg.png', 2),
+(120, 'Zapatillas Nike Air Max Ap', 'Nike', 20000, '39-40-41', 'imagenes/634da2bfcb4e7.jpg.jpeg.png', 2),
+(121, 'Zapatillas Salomon X Crest', 'Salomon', 40000, '40-41-42', 'imagenes/634da305f0ba7.jpg.jpeg.png', 3),
+(122, 'Zapatillas Salomon Patrol', 'Salomon', 35000, '39-40', 'imagenes/634da333a7011.jpg.jpeg.png', 3),
+(123, 'Zapatillas Salomon Daintree Mid Gore Tex M', 'Salomon', 41000, '39-39.5-40-41-42', 'imagenes/634da371d0375.jpg.jpeg.png', 3);
 
 --
 -- Índices para tablas volcadas
@@ -125,7 +126,7 @@ ALTER TABLE `zapatillas`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -137,7 +138,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `zapatillas`
 --
 ALTER TABLE `zapatillas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- Restricciones para tablas volcadas
