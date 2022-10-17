@@ -9,8 +9,9 @@ class UserView {
             $this->smarty = new Smarty();
         }
 
-        public function showFormLogin($error = null) {
+        public function showFormLogin($email = null, $error = null) {
             $this->smarty->assign("error", $error);
+            $this->smarty->assign("email", $email);
             $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/loginTemplates/login.tpl');
         }

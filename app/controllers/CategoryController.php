@@ -25,7 +25,7 @@ require_once './app/views/CategoryView.php';
 
         public function showAdminTableCategorias() {
             $allCategorias = $this->model->getAllCategorias();
-            $this->view->showAdminTableCategorias($allCategorias);
+            $this->view->showAdminTableCategorias($allCategorias, $this->email);
         }
 
         public function addCategory() {
@@ -40,7 +40,7 @@ require_once './app/views/CategoryView.php';
         
         public function editCategory($id) {
             $category = $this->model->editCategoryById($id);
-            $this->view->showEditTable($category);
+            $this->view->showEditTable($category, $this->email);
         }
         
         public function sendEditCategory($id) {
@@ -59,7 +59,7 @@ require_once './app/views/CategoryView.php';
 
         public function Categorias() {
             $allCategorias = $this->model->getAllCategorias();
-            $this->view->showAllCategorias($allCategorias);
+            $this->view->showAllCategorias($allCategorias, $this->email);
         }
 
         public function showCategoryById($id) {

@@ -5,12 +5,13 @@ require_once './app/views/user.view.php';
     class AuthController {
 
         private $model; 
+        private $userView;
         private $authview;
         private $email; 
 
         public function __construct() {
             $this->model = new UserModel();
-            $this->userview = new UserView();
+            $this->userView = new UserView();
             session_start(); 
             $this->setEmail();
         }
@@ -22,7 +23,7 @@ require_once './app/views/user.view.php';
         }
 
         public function showFormLogin()  {
-            $this->userview->showFormLogin();
+            $this->userView->showFormLogin($this->email);
         }
 
         public function validateUser() {
@@ -36,11 +37,11 @@ require_once './app/views/user.view.php';
                 if ($user && password_verify($password, $user->password)) {
                 
                     session_start();
-                    $_SESSION['USER_EMAIL'] = $user->email;
+                    $_SESSION['EMAIL_USER'] = $user->email;
                  
                 header("Location: " . INICIO );  
             } else {
-                $this->userview->showFormLogin("El usuario o la contraseña son incorrectos");
+                $this->userView->showFormLogin($this->email, "El usuario o la contraseña son incorrectos");
             }
         }
 

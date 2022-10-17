@@ -9,8 +9,9 @@ require_once './librerias/Smarty/libs/Smarty.class.php';
             $this->smarty = new Smarty();
         }
         
-        public function showAllCategorias($allCategorias) {
+        public function showAllCategorias($allCategorias, $email = null) {
             $this->smarty->assign('categorias', $allCategorias);
+            $this->smarty->assign('email', $email);
             $this->smarty->display('templates/header.tpl');
         }
 
@@ -22,14 +23,16 @@ require_once './librerias/Smarty/libs/Smarty.class.php';
             $this->smarty->display('templates/shoesTemplates/shoesByCategory.tpl');
         }
 
-        public function showAdminTableCategorias($allCategorias) {
+        public function showAdminTableCategorias($allCategorias, $email = null) {
             $this->smarty->assign('informacionTablaAdminCategorias', $allCategorias);
+            $this->smarty->assign('email', $email);
             $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/adminSite/tablaAdminCategory.tpl');
         }
 
-        public function showEditTable($category) {
+        public function showEditTable($category, $email = null) {
             $this->smarty->assign('categoria', $category);
+            $this->smarty->assign('email', $email);
             $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/adminSite/editTableCat.tpl');
         }

@@ -53,7 +53,7 @@ require_once './app/helpers/auth.helper.php';
         public function editShoe($id) {
             $shoe = $this->zapaModel->editShoeById($id);
             $allCategorias = $this->categoryModel->getAllCategorias();
-            $this->adminView->showEditTable($shoe, $allCategorias);
+            $this->adminView->showEditTable($shoe, $allCategorias, $this->email);
 
         }
 

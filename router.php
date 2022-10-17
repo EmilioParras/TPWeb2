@@ -105,6 +105,6 @@ switch ($params[0]) {
         $CategoryController->addCategory();
         break;
     default:
-        echo('no anda');
+        echo('error 404 not found');
         break;
 }

@@ -28,22 +28,22 @@ require_once './app/models/CategoryModel.php';
         public function showZapatillas() {
             $allCategorias = $this->categoryModel->getAllCategorias();
             $todasZapatillas = $this->model->getAllZapatillas();
-            $this->shoesview->showZapatillas($todasZapatillas, $allCategorias);
+            $this->shoesview->showZapatillas($todasZapatillas, $allCategorias, $this->email);
         }
 
         public function showUrbanShoes() {
             $urbanShoes = $this->model->getUrbanShoes();
-            $this->shoesview->showUrbanShoes($urbanShoes);
+            $this->shoesview->showUrbanShoes($urbanShoes, $this->email);
         }
 
         public function showDeportiveShoes() {
             $deportiveShoes = $this->model->getDeportiveShoes();
-            $this->shoesview->showDeportiveShoes($deportiveShoes);
+            $this->shoesview->showDeportiveShoes($deportiveShoes, $this->email);
         }
 
         public function showShoeById($id) {
             $oneshoe = $this->model->getShoe($id);
-            $this->shoesview->showOneShoe($oneshoe);
+            $this->shoesview->showOneShoe($oneshoe, $this->email);
         }
 
 }

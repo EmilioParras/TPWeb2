@@ -31,9 +31,6 @@
             <a class="nav-link text-black" aria-current="page" href="inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black" href="iniciar-sesion">Logearse</a>
-          </li>
-          <li class="nav-item">
             <div class="dropdown">
               <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Zapatillas </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -43,22 +40,24 @@
               </ul>
             </div>
           </li>
-            {if !email}    
+            {if !$email}    
               <li class="nav-item">
                 <a class="nav-link text-black" aria-current="page" href="iniciar-sesion">Login</a>
               </li>
             {else}
               <li class="nav-item ml-auto">
-                <a class="nav-link" aria-current="page" href="logout">Logout </a>
+                <a class="nav-link" aria-current="page" href="logout">Logout - {$email} </a>
               </li>
             {/if}
-            <div class="dropdown">
-                <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin Table</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <li class="nav-item"><a class="nav-link text-black" href="tabla-administrador-zapatillas">Tabla administrador de zapatillas</a></li>
-                  <li class="nav-item"><a class="nav-link text-black" href="tabla-administrador-categorias">Tabla administrador de categorias</a></li>
-                </ul>
-            </div>
+            {if $email}
+              <div class="dropdown">
+                  <a class="btn dropdown-toggle" href="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin Table</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li class="nav-item"><a class="nav-link text-black" href="tabla-administrador-zapatillas">Tabla administrador de zapatillas</a></li>
+                    <li class="nav-item"><a class="nav-link text-black" href="tabla-administrador-categorias">Tabla administrador de categorias</a></li>
+                  </ul>
+              </div>
+            {/if}  
           </ul>
           <a><img class="d-flex mx-3" width="70px" height="70px" src="./imagenes/icon.png" alt="icono"></a>
       </div>

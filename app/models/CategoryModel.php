@@ -22,14 +22,14 @@ class CategoryModel {
     }
 
     public function editCategoryById($id) {
-            $query = $this->categoryDb->prepare("SELECT nombreCategoria, descripcion FROM categoria WHERE id = ?");
+            $query = $this->categoryDb->prepare("SELECT id, nombreCategoria, descripcion FROM categoria WHERE id = ?");
             
             $query->execute([$id]);
             return $query->fetch(PDO::FETCH_OBJ);
     }
 
     public function updatedCategoryById($id, $categoria, $descripcion) {
-        $query = $this->categoryDb->prepare("UPDATE categoria SET nombreCategoria = ?, descripcion = ? WHERE id= ? ");
+        $query = $this->categoryDb->prepare("UPDATE categoria SET nombreCategoria = ?, descripcion = ? WHERE id = ?");
         $query->execute([$categoria, $descripcion, $id]);
 
     }
