@@ -29,6 +29,7 @@ Class AdminView {
         $this->smarty->assign('email', $email);
         $this->smarty->assign('editedShoe', $shoe);
         $this->smarty->assign('categorias', $allCategorias);
+        $this->smarty->display('templates/header.tpl');
         $this->smarty->display('templates/adminSite/editTableZapa.tpl');
     }
 }

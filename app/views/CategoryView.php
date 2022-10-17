@@ -17,7 +17,6 @@ require_once './librerias/Smarty/libs/Smarty.class.php';
 
         public function ZapatillasByCategoria($zapatillasById, $categorias, $id, $email = null) {
             $this->smarty->assign('email', $email);
-            $this->smarty->assign('id', $id);
             $this->smarty->assign('zapatillasById', $zapatillasById);
             $this->smarty->assign('showCategorias', $categorias);
             $this->smarty->display('templates/shoesTemplates/shoesByCategory.tpl');
@@ -33,7 +32,6 @@ require_once './librerias/Smarty/libs/Smarty.class.php';
         public function showEditTable($category, $email = null) {
             $this->smarty->assign('categoria', $category);
             $this->smarty->assign('email', $email);
-            $this->smarty->display('templates/header.tpl');
             $this->smarty->display('templates/adminSite/editTableCat.tpl');
         }
     }
