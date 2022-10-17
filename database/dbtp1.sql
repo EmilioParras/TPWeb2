@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2022 a las 12:58:26
+-- Tiempo de generación: 17-10-2022 a las 03:09:59
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `id` int(11) NOT NULL,
-  `categoria` varchar(200) NOT NULL,
+  `nombreCategoria` varchar(200) NOT NULL,
   `descripcion` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -37,24 +37,33 @@ CREATE TABLE `categoria` (
 -- Volcado de datos para la tabla `categoria`
 --
 
-INSERT INTO `categoria` (`id`, `categoria`, `descripcion`) VALUES
+INSERT INTO `categoria` (`id`, `nombreCategoria`, `descripcion`) VALUES
 (1, 'Urbana', 'Zapatillas urbanas para el dia a dia.'),
-(2, 'Deportiva', 'Zapatillas deportivas ideales para todo tipo de actividad.');
+(2, 'Deportiva', 'Zapatillas deportivas ideales para todo tipo de actividad.'),
+(3, 'Montaña', 'Zapatillas ideales para un paseo por las montañas.'),
+(5, 'Moda', 'Zapatillas ideales para ir a la moda.'),
+(43, 'caca', 'caca'),
+(45, 'jeje', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `Nombre` varchar(200) NOT NULL,
-  `apellido` varchar(200) NOT NULL,
-  `telefono` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `clave_hash` varchar(200) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `rol` enum('usuario','administrador') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `rol`) VALUES
+(1, 'email@gmail.com', '$2a$12$hTjElN81AfdHXgdkoM8oieKl7jAlP3t/Pq308IsDrmEVRx9XSNrwO', 'usuario');
 
 -- --------------------------------------------------------
 
@@ -82,9 +91,7 @@ INSERT INTO `zapatillas` (`id`, `nombre`, `marca`, `precio`, `talle`, `imagen`, 
 (3, 'Vans U Old Skool', 'Vans', 15000, '39-40-41-41.5-42', './imagenes/ZapatillasUrbanas/VansUOldSkool.jpg', 1),
 (4, 'Jhoon Foos Claw Black', 'Jhon Foos', 23000, '40-41-42', './imagenes/ZapatillasUrbanas/JhonFoosClawBlack.jpg', 1),
 (5, 'Zapatillas Adidas Core racer', 'Adidas', 14500, '39-40-41', './imagenes/ZapatillasDeportivas/ZapatillasAdidasCoreracer.jpg', 2),
-(6, 'Zapatilla Negra Topper Core', 'Topper', 18000, '40-41-42', './imagenes/ZapatillasDeportivas/ZapatillaNegraTopperCore.jpg\r\n', 2),
-(7, 'Zapatilla Negra Puma Comet', 'Puma', 20000, '40-41', './imagenes/ZapatillasDeportivas/ZapatillaNegraPumaComet.jpg', 2),
-(9, 'Zapatilla Gris Topper Core W', 'Topper', 13000, '40-41-42', './imagenes/ZapatillasDeportivas/ZapatillaGrisTopperCoreW.jpg', 2);
+(74, 'Zapatilla de montaña', 'Topper', 25, '39-40-41', '', 2);
 
 --
 -- Índices para tablas volcadas
@@ -97,9 +104,9 @@ ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indices de la tabla `users`
 --
-ALTER TABLE `usuarios`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
@@ -118,19 +125,19 @@ ALTER TABLE `zapatillas`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT de la tabla `users`
 --
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `zapatillas`
 --
 ALTER TABLE `zapatillas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- Restricciones para tablas volcadas
@@ -140,7 +147,7 @@ ALTER TABLE `zapatillas`
 -- Filtros para la tabla `zapatillas`
 --
 ALTER TABLE `zapatillas`
-  ADD CONSTRAINT `zapatillas_ibfk_1` FOREIGN KEY (`id_categoria_fk`) REFERENCES `categoria` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `zapatillas_ibfk_1` FOREIGN KEY (`id_categoria_fk`) REFERENCES `categoria` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

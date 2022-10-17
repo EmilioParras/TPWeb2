@@ -30,7 +30,7 @@
                                 <select id="addCategory" name="addCategory" class="form-control">
                                 {foreach from=$categorias item=$categoria}    
                                         <option value="{$categoria->id}">{$categoria->nombreCategoria}</option>
-                                    {/foreach}
+                                {/foreach}
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-2">Agregar</button>
